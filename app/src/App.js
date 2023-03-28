@@ -1,9 +1,41 @@
 import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import { Layout, Typography, Space } from "antd";
+import {
+  Navbar,
+  HomePage,
+  Cryptocurrencies,
+  News,
+  CryptoDetails,
+} from "./components";
+
+import "./App.css";
 
 const App = () => {
   return (
-    <div>
-      <h1>hello</h1>
+    <div className="app">
+      <div className="navbar">
+        <Navbar />
+      </div>
+      <div className="main">
+        <Layout>
+          <div className="routes">
+            <Routes>
+              <Route exact path="/" element={<HomePage /> }/>
+                
+              <Route exact path="/cryptocurrencies" element={<Cryptocurrencies />}/>
+                
+              <Route exact path="/crypto/:coinId" element={<CryptoDetails />}/>
+                
+             
+              <Route exact path="/news" element={<News />}/>
+              
+          
+            </Routes>
+          </div>
+        </Layout>
+      </div>
+      <div className="footer"></div>
     </div>
   );
 };
