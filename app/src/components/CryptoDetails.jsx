@@ -17,7 +17,9 @@ import {
 import {
   useGetCryptoDetailsQuery,
   useGetCryptosQuery,
+  useGetCryptoHistoryQuery,
 } from "../services/cryptoApi";
+import LineChart from "./LineChart";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -28,6 +30,7 @@ const CryptoDetails = () => {
   const [timePeriod, setTimeperiod] = useState("7d");
 
   const { data: cryptosList } = useGetCryptosQuery(count);
+
   const [cryptos, setCryptos] = useState(cryptosList?.data?.coins);
   const currCoin = cryptosList?.data?.coins.find(
     (coin) => coin.rank === +coinId
@@ -36,6 +39,10 @@ const CryptoDetails = () => {
 
   const { data, isFetching } = useGetCryptoDetailsQuery(currUUID);
   const cryptoDetails = data?.data?.coin;
+  const { data: coinHistory } = useGetCryptoHistoryQuery({
+    currUUID,
+    timePeriod,
+  });
 
   if (isFetching) return "Loading...";
 
@@ -102,8 +109,6 @@ const CryptoDetails = () => {
     },
   ];
 
-  console.log(cryptoDetails);
-
   return (
     <Col className="coin-detail-container">
       <Col className="coin-heading-container">
@@ -125,6 +130,11 @@ const CryptoDetails = () => {
           <Option key={date}>{date}</Option>
         ))}
       </Select>
+      <LineChart
+        coinHistory={coinHistory}
+        currentPrice={millify(cryptoDetails?.price)}
+        coinName={cryptoDetails?.name}
+      />
       <Col className="stats-container">
         <Col className="coin-value-statistics">
           <Col className="coin-value-statistics-heading">
@@ -133,8 +143,8 @@ const CryptoDetails = () => {
             </Title>
             <p>An overview showing the stats of {cryptoDetails?.name}</p>
           </Col>
-          {stats.map(({ icon, title, value }) => (
-            <Col className="coin-stats">
+          {stats.map(({ icon, title, value }, i) => (
+            <Col key={i} className="coin-stats">
               <Col className="coin-stats-name">
                 <Text>{icon}</Text>
                 <Text>{title}</Text>
@@ -150,8 +160,8 @@ const CryptoDetails = () => {
             </Title>
             <p>An overview showing the stats of all Cryptocurrencies</p>
           </Col>
-          {genericStats.map(({ icon, title, value }) => (
-            <Col className="coin-stats">
+          {genericStats.map(({ icon, title, value }, index) => (
+            <Col key={index} className="coin-stats">
               <Col className="coin-stats-name">
                 <Text>{icon}</Text>
                 <Text>{title}</Text>
@@ -166,13 +176,15 @@ const CryptoDetails = () => {
           <Title level={3} className="coin-details-heading">
             What is {cryptoDetails?.name}?
           </Title>
-          {HTMLReactParser(cryptoDetails?.description)}
+          <div className="coin-details-description">
+            {cryptoDetails?.description}
+          </div>
         </Row>
         <Col className="coin-links">
           <Title level={3} className="coin-details-heading">
             {cryptoDetails?.name} Links
           </Title>
-          {cryptoDetails.links?.map((link) => (
+          {cryptoDetails?.links.map((link) => (
             <Row className="coin-link" key={link?.name}>
               <Title level={5} className="link-name">
                 {link?.type}
