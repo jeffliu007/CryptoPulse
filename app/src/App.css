@@ -375,3 +375,9 @@ a:hover {
   padding: 20px;
   align-items: center;
 }
+
+.news-image-container img {
+  height: 60px;
+  width: 60px;
+  border-radius: 4px;
+}
