@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
+import { Button } from "antd";
+
+import icon from "../images/metamask-fox-logo.jpeg";
 
 const Wallet = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [defaultAccount, setDefaultAccount] = useState(null);
   const [userBalance, setUserBalance] = useState(null);
-  const [connButtonText, setConnButtonText] = useState("Connect Wallet");
+  const [walletConnected, setWalletConnected] = useState(false);
 
   const connectWalletHandler = () => {
     if (window.ethereum) {
@@ -13,6 +16,7 @@ const Wallet = () => {
         .request({ method: "eth_requestAccounts" })
         .then((result) => {
           accountChangedHandler(result[0]);
+          setWalletConnected(!walletConnected);
         });
     } else {
       setErrorMessage("Install MetaMask");
@@ -42,11 +46,14 @@ const Wallet = () => {
   return (
     <div className="wallet-container">
       <div className="wallet-info">
-        <h3>{"Connection to MetaMask using window.ethereum methods"}</h3>
-        <button onClick={connectWalletHandler}>{connButtonText}</button>
-        <div>
+        <h3>{"Connect to MetaMask using window.ethereum methods"}</h3>
+        <img src={icon} />
+        {!walletConnected && (
+          <Button onClick={connectWalletHandler}>Connect Wallet</Button>
+        )}
+        <div className="wallet-stats">
           <h3>Address: {defaultAccount}</h3>
-          <h3>Balance: {userBalance}</h3>
+          <h3>Balance: {userBalance} ~ ETH</h3>
         </div>
         {errorMessage}
       </div>

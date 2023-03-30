@@ -418,5 +418,27 @@ a:hover {
 .wallet-container {
   display: flex;
   height: 89vh;
-  border: 2px solid red;
+
+  justify-content: center;
+}
+
+.wallet-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 38px;
+}
+
+.wallet-info img {
+  height: 60%;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.wallet-stats {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-direction: column;
 }
