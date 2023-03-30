@@ -414,3 +414,9 @@ a:hover {
 .news-container {
   padding: 20px;
 }
+
+.wallet-container {
+  display: flex;
+  height: 89vh;
+  border: 2px solid red;
+}

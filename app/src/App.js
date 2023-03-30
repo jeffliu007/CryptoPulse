@@ -7,6 +7,7 @@ import {
   Cryptocurrencies,
   News,
   CryptoDetails,
+  Wallet,
 } from "./components";
 
 import "./App.css";
@@ -21,8 +22,8 @@ const App = () => {
         <Layout>
           <div className="Routes">
             <Switch>
-              <Route exact path="/">
-                <HomePage />
+              <Route exact path="/wallet">
+                <Wallet />
               </Route>
               <Route exact path="/cryptocurrencies">
                 <Cryptocurrencies />
@@ -32,6 +33,9 @@ const App = () => {
               </Route>
               <Route exact path="/news">
                 <News />
+              </Route>
+              <Route exact path="/">
+                <HomePage />
               </Route>
             </Switch>
           </div>
