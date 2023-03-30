@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
 import {
   Navbar,
@@ -7,6 +7,7 @@ import {
   Cryptocurrencies,
   News,
   CryptoDetails,
+  Wallet,
 } from "./components";
 
 import "./App.css";
@@ -19,23 +20,59 @@ const App = () => {
       </div>
       <div className="main">
         <Layout>
-          <div className="routes">
-            <Routes>
-              <Route exact path="/" element={<HomePage /> }/>
-                
-              <Route exact path="/cryptocurrencies" element={<Cryptocurrencies />}/>
-                
-              <Route exact path="/crypto/:coinId" element={<CryptoDetails />}/>
-                
-             
-              <Route exact path="/news" element={<News />}/>
-              
-          
-            </Routes>
+          <div className="Routes">
+            <Switch>
+              <Route exact path="/wallet">
+                <Wallet />
+              </Route>
+              <Route exact path="/cryptocurrencies">
+                <Cryptocurrencies />
+              </Route>
+              <Route exact path="/crypto/:coinId">
+                <CryptoDetails />
+              </Route>
+              <Route exact path="/news">
+                <News />
+              </Route>
+              <Route exact path="/">
+                <HomePage />
+              </Route>
+            </Switch>
           </div>
         </Layout>
+        <div className="footer">
+          <Typography.Title
+            level={5}
+            style={{ color: "white", textAlign: "center" }}
+          >
+            Crypto Pulse <br />
+            My other projects below!
+          </Typography.Title>
+          <Space>
+            <a
+              href="https://elitepay.onrender.com/"
+              target={" _blank"}
+              rel="noopener noreferrer"
+            >
+              ElitePay
+            </a>
+            <a
+              href="https://pixelpeek.onrender.com/"
+              target={" _blank"}
+              rel="noopener noreferrer"
+            >
+              PixelPeek
+            </a>
+            <a
+              href="https://skybnb-jl.onrender.com/"
+              target={" _blank"}
+              rel="noopener noreferrer"
+            >
+              Skybnb
+            </a>
+          </Space>
+        </div>
       </div>
-      <div className="footer"></div>
     </div>
   );
 };
