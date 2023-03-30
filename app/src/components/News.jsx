@@ -4,22 +4,23 @@ import moment from "moment";
 import { useGetCryptoNewsQuery } from "../services/cryptoApiNews";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import newsIcon from "../images/newsCrypto.png";
+import Loader from "./Loader";
 
 const { Text, Title } = Typography;
 const { Option } = Select;
 
 const News = ({ simplified }) => {
   const [newsCategory, setNewsCategory] = useState("Cryptocurrency");
-  const count = simplified ? 6 : 12;
+  const count = simplified ? 7 : 13;
   const { data: cryptoNews } = useGetCryptoNewsQuery({
     newsCategory,
     count,
   });
   const { data } = useGetCryptosQuery(100);
 
-  if (!cryptoNews) return "Loading...";
+  if (!cryptoNews) return <Loader />;
   return (
-    <Row gutter={[24, 24]}>
+    <Row gutter={[24, 24]} className="news-container">
       {!simplified && (
         <Col span={24}>
           <Select

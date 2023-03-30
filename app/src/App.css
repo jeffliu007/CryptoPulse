@@ -2,8 +2,8 @@
   --text-primary: #000;
   --bgPrimary: #fff;
   --bgSecondary: #f9f9f9;
-  --pink: #0071bd;
-  --light-blue: #e6f7ff;
+  --pink: #bc8afc;
+  --light-blue: #e2a3f6;
   --border: #d9d9d9;
 }
 
@@ -24,7 +24,7 @@ a:hover {
 
 .navbar {
   flex: 0.2;
-  background-color: rgb(0, 21, 41);
+  background-color: rgb(58, 45, 73);
 }
 
 .main {
@@ -40,11 +40,11 @@ a:hover {
   margin: 10px;
   height: 100vh;
   margin: 0px;
-  background-color: rgb(0, 21, 41);
+  background-color: rgb(58, 45, 73);
 }
 
 .logo-container {
-  background-color: #001529;
+  background-color: rgb(58, 45, 73);
   display: flex;
   padding: 20px;
   align-items: center;
@@ -52,10 +52,13 @@ a:hover {
 }
 .logo {
   margin: 0 0 0 15px;
+  position: relative;
+  top: 7px;
 }
 .logo a {
   color: white;
 }
+
 .menu-control-container {
   display: none !important;
   position: absolute !important;
@@ -134,6 +137,7 @@ a:hover {
 
 .coin-detail-container {
   margin: 30px;
+  padding: 10px;
 }
 
 .coin-heading-container {
@@ -369,7 +373,7 @@ a:hover {
 }
 
 .footer {
-  background-color: #001529;
+  background-color: rgb(58, 45, 73);
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -385,4 +389,28 @@ a:hover {
 .coin-details-description {
   position: relative;
   bottom: 37%;
+}
+
+.homepage-container {
+  padding: 28px;
+}
+
+.crypto-card-wrapper {
+  padding: 20px;
+}
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88vh;
+}
+
+.nav-menu {
+  background-color: rgb(58, 45, 73);
+  color: white;
+}
+
+.news-container {
+  padding: 20px;
 }

@@ -42,12 +42,30 @@ const App = () => {
             style={{ color: "white", textAlign: "center" }}
           >
             Crypto Pulse <br />
-            All Rights Reserved
+            My other projects below!
           </Typography.Title>
           <Space>
-            <Link to="/">Home</Link>
-            <Link to="/cryptocurrencies">Cryptocurrencies</Link>
-            <Link to="/news">News</Link>
+            <a
+              href="https://elitepay.onrender.com/"
+              target={" _blank"}
+              rel="noopener noreferrer"
+            >
+              ElitePay
+            </a>
+            <a
+              href="https://pixelpeek.onrender.com/"
+              target={" _blank"}
+              rel="noopener noreferrer"
+            >
+              PixelPeek
+            </a>
+            <a
+              href="https://skybnb-jl.onrender.com/"
+              target={" _blank"}
+              rel="noopener noreferrer"
+            >
+              Skybnb
+            </a>
           </Space>
         </div>
       </div>
