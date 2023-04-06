@@ -35,7 +35,9 @@ const News = ({ simplified }) => {
           >
             <Option value={"Cryptocurrency"}>Cryptocurrency</Option>
             {data?.data?.coins.map((coin) => (
-              <Option value={coin.name}>{coin.name}</Option>
+              <Option key={coin.name} value={coin.name}>
+                {coin.name}
+              </Option>
             ))}
           </Select>
         </Col>
@@ -48,7 +50,10 @@ const News = ({ simplified }) => {
                 <Title className="new-title" level={4}>
                   {news.name}
                 </Title>
-                <img src={news?.image?.thumbnail?.contentUrl || newsIcon} />
+                <img
+                  alt="news content"
+                  src={news?.image?.thumbnail?.contentUrl || newsIcon}
+                />
               </div>
               <p>
                 {news.description > 100
