@@ -1,5 +1,7 @@
 # CryptoPulse
 
+* Site is currently not live - unable to deploy for free due to API calls
+
 This is the readme for the CryptoPulse. A dashboard for users to look up any cryptocurrency information that can be found on coinranking. This application uses RapidApi to fetch data regarding coins as well as cryptocurrency related news from Bing search. Users can also connect their Metamask account and display data. Antd is also used for styling.
 
 ## Tech Stack
