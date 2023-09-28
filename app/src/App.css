@@ -453,11 +453,16 @@ a:hover {
 
 .chat-container {
   display: flex;
-  height: 78vh;
-  justify-content: center;
+  height: 70vh;
+  max-height: 78vh;
+  justify-content: flex-start;
   background-color: rgb(255, 255, 255);
   border-radius: 8px;
   border: 1px solid #ccc;
+  flex-direction: column;
+  padding: 15px;
+  gap: 20px;
+  overflow-y: auto;
 }
 
 .input-container {
@@ -466,7 +471,7 @@ a:hover {
   display: flex;
   gap: 10px;
   position: relative;
-  bottom: 25px;
+  bottom: 7px;
 }
 
 .textarea-container {
@@ -488,4 +493,30 @@ textarea {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.message-list {
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.user-message {
+  background-color: #007bff;
+  color: #fff;
+  align-self: flex-start;
+}
+
+.assistant-message {
+  background-color: #a269df;
+  color: #fff;
+  align-self: flex-start;
+}
+
+.system-message {
+  display: none;
+}
+
+.chat-error {
+  color: red;
+  height: 70vh;
 }
