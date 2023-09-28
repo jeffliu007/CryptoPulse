@@ -1,6 +1,6 @@
 # CryptoPulse
 
-* Site is currently not live - unable to deploy for free due to API calls
+Site is currently not live - unable to deploy for free due to API calls
 
 This is the readme for the CryptoPulse. A dashboard for users to look up any cryptocurrency information that can be found on coinranking. This application uses RapidApi to fetch data regarding coins as well as cryptocurrency related news from Bing search. Users can also connect their Metamask account and display data. 
 
@@ -19,6 +19,8 @@ Added ChatGPT powered chat bot for users to ask any questions, all answered by G
   - ChartJs
   - Ether
   - RapidApi
+  - OpenAI
+  - ChatGpt
 
 ## Preview
 
