@@ -33,7 +33,7 @@ Added ChatGPT powered chat bot for users to ask any questions, all answered by G
    ```
    npm install
    ```
-3. Create a .env file with a `REACT_APP_RAPID_KEY=` for RapidAPI integration and a `REACT_APP_OPENAI_API_KEY=` for GPT integration to work as intended. You can follow the example env for reference. The application will not work if API keys are missing.    
+3. Create a .env file in the root of the "app" folder with a `REACT_APP_RAPID_KEY=` for RapidAPI integration and a `REACT_APP_OPENAI_API_KEY=` for GPT integration to work as intended. You can follow the example env for reference. The application will not work if API keys are missing.    
 
 4. To start the frontend `npm start`
 
