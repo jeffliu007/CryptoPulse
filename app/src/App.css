@@ -409,6 +409,7 @@ a:hover {
 .nav-menu {
   background-color: rgb(58, 45, 73);
   color: white;
+  font-size: larger;
 }
 
 .news-container {
@@ -441,4 +442,81 @@ a:hover {
   align-items: center;
   gap: 28px;
   flex-direction: column;
+}
+
+.chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 30px;
+}
+
+.chat-container {
+  display: flex;
+  height: 70vh;
+  max-height: 78vh;
+  justify-content: flex-start;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  flex-direction: column;
+  padding: 15px;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.input-container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  position: relative;
+  bottom: 7px;
+}
+
+.textarea-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.chat-button {
+  background-color: rgb(58, 45, 73);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.message-list {
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.user-message {
+  background-color: #007bff;
+  color: #fff;
+  align-self: flex-start;
+}
+
+.assistant-message {
+  background-color: #a269df;
+  color: #fff;
+  align-self: flex-start;
+}
+
+.system-message {
+  display: none;
+}
+
+.chat-error {
+  color: red;
+  height: 70vh;
 }
