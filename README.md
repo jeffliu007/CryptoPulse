@@ -43,4 +43,9 @@ Crypto News <br/>
 MetaMask Demonstration
 ![CryptoPulseGif3](https://user-images.githubusercontent.com/98433650/228747716-23835468-3652-4eef-ae2b-248f28054fdc.gif)
 
+ChatGPT Chatbot 
+<img width="1430" alt="Screenshot 2023-09-28 at 2 03 10 PM" src="https://github.com/jeffliu007/CryptoPulse/assets/98433650/32608a5a-52bc-426d-998c-3739bba2be68">
+
+
+
 
