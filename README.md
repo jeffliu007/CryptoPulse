@@ -2,7 +2,9 @@
 
 * Site is currently not live - unable to deploy for free due to API calls
 
-This is the readme for the CryptoPulse. A dashboard for users to look up any cryptocurrency information that can be found on coinranking. This application uses RapidApi to fetch data regarding coins as well as cryptocurrency related news from Bing search. Users can also connect their Metamask account and display data. Antd is also used for styling.
+This is the readme for the CryptoPulse. A dashboard for users to look up any cryptocurrency information that can be found on coinranking. This application uses RapidApi to fetch data regarding coins as well as cryptocurrency related news from Bing search. Users can also connect their Metamask account and display data. 
+
+Added ChatGPT powered chat bot for users to ask any questions, all answered by GPT's 3.5 turbo model. 
 
 ## Tech Stack
 
@@ -29,8 +31,9 @@ This is the readme for the CryptoPulse. A dashboard for users to look up any cry
    ```
    npm install
    ```
+3. Create a .env file with a `REACT_APP_RAPID_KEY=` for RapidAPI integration and a `REACT_APP_OPENAI_API_KEY=` for GPT integration to work as intended. You can follow the example env for reference. The application will not work if API keys are missing.    
 
-3. To start the frontend `npm start`
+4. To start the frontend `npm start`
 
 ## Preview
 
